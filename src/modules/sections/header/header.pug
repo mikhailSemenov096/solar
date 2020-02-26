@@ -1,0 +1,27 @@
+include /modules/blocks/phones/phones.pug
+include /modules/blocks/navbar/navbar.pug
+include /modules/blocks/social/social.pug
+
+mixin header()
+	header.header.body-hidden-elem
+		.container
+			.header__row.section-row
+				.header__btn-mob-menu
+					include /resources/img/icons/icon_menu.svg
+				.header__logo-wrap
+					span.header__logo-link
+						img.header__logo.logo(alt='Логотип' src='img/logo.svg')
+				.header__main
+					.header__info
+						.header__info-top
+							+phones('header__phones')
+							.time-work
+								span Ежедневно, 10:00–23:00
+						+navbar('header__navbar')
+					.header__connect
+						+social('header__social')
+						button.header__btn-call.btn(data-modal='popup-call') заказать звонок
+
+
+
+

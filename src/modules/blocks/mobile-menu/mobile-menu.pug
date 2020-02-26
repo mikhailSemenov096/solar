@@ -1,0 +1,15 @@
+include /modules/blocks/phones/phones.pug
+include /modules/blocks/navbar/navbar.pug
+include /modules/blocks/social/social.pug
+
+mixin mobile-menu()
+	.overlay.overlay-mobile.box-hidden
+	.mobile-menu
+		+navbar("mobile-menu__navbar")
+		+phones("mobile-menu__phones")
+		.mobile-menu__time-work.time-work
+			span Ежедневно, 10:00–23:00
+		.mobile-menu__btn-wrap
+			button.btn заказать звонок
+		+social('mobile-menu__social')
+

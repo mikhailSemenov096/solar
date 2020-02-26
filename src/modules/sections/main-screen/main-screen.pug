@@ -1,0 +1,54 @@
+mixin main-screen()
+	-
+		const mainSliderList = [
+			{
+				bg: 'img/main/main-slide_1.jpg',
+				img: 'img/main/bg1_img.png',
+				title: 'Агентство недвижимости Solar: помощь с покупкой и&nbsp;продажей квартир в Уфе',
+				descr: 'Осуществим сделку в нужный Вам срок. Оплата по факту осуществления купли-продажи.'
+			},
+
+			{
+				bg: 'img/main/main-slide_2.jpg',
+				img: 'img/main/bg2_img.png',
+				title: 'Одобрение ипотеки с&nbsp;выгодной скидкой специально для вас',
+				descr: 'Мы сотрудничаем с ведущими банками России. Получить ипотеку с нами вам не составит труда.'
+			},
+
+			{
+				bg: 'img/main/main-slide_3.jpg',
+				img: 'img/main/bg3_img.png',
+				title: 'Работаем со всеми видами недвижимости',
+				descr: 'Подберем абсолютно любую недвижимость на Ваш вкус.'
+			},
+		]
+
+	section.main-screen
+		.main-screen__slider-wrap
+			.main-screen__slider.swiper-container
+				.swiper-wrapper
+					each mainSliderItem, i in mainSliderList
+						.main-screen__item.swiper-slide(style=`background-image: url(${mainSliderItem.bg});`)
+							.container
+								.main-screen__inner.section-row
+									.main-screen__info-wrap.section-col
+										.main-screen__info
+											.main-screen__title-wrap.section-title-wrap
+												h2.main-screen__title.section-title !{mainSliderItem.title}
+												p.main-screen__descr.section-descr !{mainSliderItem.descr}
+
+											.main-screen__btn-wrap
+												button.main-screen__btn.btn(data-modal="popup-call") узнать подробнее
+									.main-screen__img-wrap.section-col
+										img.main-screen__img(src= mainSliderItem.img)
+
+
+
+
+
+
+
+
+
+
+

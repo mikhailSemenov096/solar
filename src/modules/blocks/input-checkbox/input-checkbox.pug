@@ -1,0 +1,4 @@
+mixin input-checkbox(data, check)
+	label(class='check-field' for=`${data}-checkbox`)
+		input(class='check-field__input' type='checkbox' id=`${data}-checkbox` name=`${data}-checkbox` checked= (check) ? true : false)
+		span(class='check-field__btn')

@@ -1,0 +1,40 @@
+block globalVars
+	-
+		var advantagesList = [
+			{src: 'img/advantages/1.svg', title: 'Работаем без предоплат'},
+			{src: 'img/advantages/2.svg', title: 'Помощь в оформлении ипотеки в ведущих банках России'},
+			{src: 'img/advantages/3.svg', title: 'Юридическая чистота всех сделок'},
+			{src: 'img/advantages/4.svg', title: 'Большая база проверенных объектов'},
+			{src: 'img/advantages/adv_center_img.png', title: 'Преимущества', type: 'center'},
+			{src: 'img/advantages/5.svg', title: 'Реклама более чем на 40 площадках'},
+			{src: 'img/advantages/6.svg', title: 'Более 70 предложений новостроек с индивидуальной скидкой'},
+			{src: 'img/advantages/7.svg', title: 'Экслюзивные договора со страховыми компаниями'},
+			{src: 'img/advantages/8.svg', title: 'Продажа и покупка квартиры в один день'},
+		]
+
+//- Агентство недвижимости Solar - 19 лет опыта на рынке недвижимости Уфы
+
+section.advantages(id="advantages")
+	.container
+		.advantages__title-wrap.section-title-wrap
+			h2.advantages__title.section-title Агентство недвижимости Solar - 19 лет опыта на рынке недвижимости Уфы
+			p.section-descr.
+				Мы понимаем насколько для Вас важно в короткие сроки решить вопрос с недвижимостью.
+				Пока Вы думаете «Как продать или найти квартиры?» - мы уже обсуждаем условия с потенциальными клиентами!
+		.advantages__list.section-row
+			each advantagesItem, i in advantagesList
+				if advantagesItem.type
+					.advantages__item.advantages__item_center.wow.zoomIn
+						.advantages__center-block
+							.advantages__center-content
+								.advantages__img-wrap
+									img.advantages__img(src=advantagesItem.src)
+								.section-title Преимущества
+				else
+					.advantages__item.wow.zoomIn(href="#")
+						.advantages__img-wrap
+							img.advantages__img(src=advantagesItem.src)
+						.advantages__item-descr= advantagesItem.title
+		.section-btn-wrap
+			button.btn(data-modal="popup-call") Заказать звонок
+

@@ -1,0 +1,102 @@
+.footer
+	background-color: #202020
+	padding: 45px 0 60px
+	color: #939393
+	&__row
+		margin: 0
+		align-items: center
+	&__view
+		display: flex
+		align-items: center
+		margin-right: 105px
+	&__logo-wrap
+		max-width: 118px
+		margin-right: 17px
+	&__main-wrap
+		flex: 1 0 0
+	&__main
+		display: flex
+		align-items: center
+		justify-content: space-between
+	&__btn-call
+		height: 40px
+		line-height: 40px
+		padding: 0 20px
+	&__phones
+		.phones__item
+			padding: 0
+			&::before
+				display: none
+		.phones__link
+			color: $whiteColor
+			font-weight: 400
+			@include adaptive-hover
+				color: #939393
+	&__social
+		.social__link
+			svg
+				path
+					fill: #5b5b5b
+			@include adaptive-hover
+				svg
+					path
+						fill: $whiteColor
+
+@include adaptive-max-desktop-sm
+	.footer
+		&__view
+			margin-right: 30px
+
+@include adaptive-max-tablet
+	.footer
+		&__view
+			margin-right: 0
+		&__main
+			justify-content: flex-end
+			flex-wrap: wrap
+			text-align: right
+			flex: 0 0 0
+		&__adress, &__social, &__phones, &__btn-wrap
+			max-width: 50%
+			flex: 0 0 50%
+		&__phones
+			order: 0
+			margin-bottom: 15px
+		&__btn-wrap
+			order: 1
+			margin-bottom: 15px
+		&__adress
+			order: 2
+		&__social
+			order: 3
+			justify-content: flex-end
+
+@include adaptive-max-mobile
+	.footer
+		&__row
+			flex-direction: column
+			justify-content: space-between
+		&__view
+			margin-bottom: 45px
+		&__main
+			text-align: center
+		&__social
+			justify-content: center
+
+@include adaptive-max-mobile-sm
+	.footer
+		&__row
+			display: block
+		&__main
+			flex-direction: column
+			text-align: left
+			align-items: flex-start
+
+		&__adress, &__social, &__phones, &__btn-wrap
+			max-width: 100%
+			flex: 0 0 100%
+		&__adress, &__phones
+			margin-bottom: 25px
+		&__btn-wrap
+			margin-bottom: 20px
+

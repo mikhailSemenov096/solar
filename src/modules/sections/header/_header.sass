@@ -1,0 +1,131 @@
+.header
+	padding-top: 10px
+	padding-bottom: 10px
+	&:not(.header-clone)
+		background-color: white
+		transition: box-shadow .3s ease-in
+		position: fixed
+		top: 0
+		left: 0
+		width: 100%
+		z-index: 5
+	&_active
+		box-shadow: 0px 10px 15px 0px rgba(0, 0, 0, .2)
+		.header__info-top
+			display: none
+		.header__logo
+			max-width: 80%
+	&_static
+		position: static
+	&-clone
+		visibility: hidden
+		pointer-events: none
+		opacity: 0
+		position: static
+		transition: none
+		.header__logo
+			transition: none
+
+	&__row
+		justify-content: space-between
+		margin: 0
+	&__logo-wrap
+		max-width: 213px
+		align-self: center
+		margin-right: 30px
+	&__logo
+		max-width: 100%
+		transition: max-width .3s ease-in
+
+	&__logo-link
+		display: inline-block
+	&__main
+		display: flex
+		align-items: center
+		justify-content: space-between
+		// padding: 30px 0 15px
+		flex: 1 0 auto
+	&__info
+		margin-right: 67px
+
+	&__info-top
+		display: flex
+
+		margin-bottom: 25px
+	&__phones
+		display: flex
+		margin-right: 40px
+	&__navbar
+		max-width: 100%
+		flex: 0 0 100%
+		// padding-bottom: 15px
+		.navbar__border
+			bottom: -15px
+	&__connect
+		display: flex
+		align-items: center
+	&__social
+		margin-right: 25px
+	&__btn-call
+		padding: 0 23px
+	&__btn-mob-menu
+		display: none
+
+.field-wrap__label
+	&.head
+		transition: opacity 3s linear
+		opacity: 0
+
+@include adaptive-max-desktop-sm
+	.header
+		&__info
+			margin-right: 30px
+		&__phones
+			// margin-bottom: 10px
+		&__info-top
+			// flex-direction: column
+		&__phones
+			margin-right: 20px
+
+@include adaptive-min-max($desktopSmMin, 1080px)
+	.header
+		&__phones
+			margin-bottom: 10px
+		&__info-top
+			flex-direction: column
+
+@include adaptive-max-tablet
+	$mobMenuBtnWidth: 20px
+	.header
+		padding: 5px 0
+		&_active
+			.header__logo-wrap
+				.logo
+					max-width: 90px
+		&__row
+			align-items: center
+			justify-content: flex-start
+		&__logo-wrap
+			flex: 1 0 auto
+			max-width: 100%
+			text-align: center
+			margin-right: 0
+			margin-left: -$mobMenuBtnWidth
+
+			.logo
+				max-width: 110px
+
+		&__logo-link
+			max-width: 110px
+		&__btn-mob-menu
+			display: block
+			width: $mobMenuBtnWidth
+			height: auto
+			position: relative
+			z-index: 1
+			svg
+				width: 100%
+				display: inline-block
+				vertical-align: bottom
+		&__main
+			display: none

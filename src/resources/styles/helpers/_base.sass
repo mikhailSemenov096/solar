@@ -1,0 +1,149 @@
+body
+	font-family: 'OpenSans', sans-serif
+	font-size: 14px
+	color: $blackColor
+	line-height: 1.3
+	&::-webkit-scrollbar
+		width: 10px
+		opacity: 0
+	&::-webkit-scrollbar-thumb
+		border-radius: 8px
+		background-color: rgba(#939393, .5)
+		cursor: pointer
+
+.body_hidden
+	overflow: hidden
+	position: fixed
+	top: 0
+	left: 0
+	width: 100%
+
+// .body_animate
+// 	transform: scale(.9)
+.wow
+	visibility: hidden
+	
+*
+	outline: none
+	box-sizing: border-box
+
+button
+	border: none
+	background: none
+	cursor: pointer
+
+ul, ol
+	margin: 0
+	padding: 0
+	list-style: none
+
+a
+	text-decoration: none
+	color: inherit
+
+p
+	margin: 0
+
+input
+	border: none
+	background: none
+
+img
+	max-width: 100%
+
+.logo
+	width: 100%
+
+.link-blue
+	color: $blueColor
+	font-size: inherit
+
+.btn
+	display: inline-block
+	border-radius: 25px
+	background-color: $yellowColor
+	letter-spacing: 1.2px
+	font-weight: 700
+	text-transform: uppercase
+	height: 50px
+	line-height: 50px
+	font-size: 12px
+	padding: 0 48px
+	white-space: nowrap
+
+.section-title-wrap
+	max-width: 700px
+	margin: 0 auto
+	text-align: center
+	// font-size: 0px !important
+
+.section-title
+	// font-size: 0px !important
+	font-size: 30px
+	font-weight: 700
+	margin: 0 0 25px
+	// perspective: 300px
+	// letter-spacing: -.36em
+	&_h3
+		font-size: 20px
+	&__word
+	// 	display: inline-block
+	// 	letter-spacing: normal
+	// 	font-size: 30px
+	// 	transition-property: transform, opacity
+	// 	transition-duration: 0.3s
+	// 	transition-timing-function: ease
+	// 	transform: translate3d(-30px, -20px, 100px)
+	// 	opacity: 0
+	// 	// white-space: pre-wrap
+
+
+	// &__word_active
+	// 	transform: translate3d(0, 0, 0)
+	// 	opacity: 1
+
+
+
+.section-descr
+	color: $greyColor
+	font-size: 16px
+
+.section-btn-wrap
+	text-align: center
+
+.shadow-block
+	box-shadow: 0 7px 15px 5px rgba(0, 0, 0, 0.1)
+	border-radius: 6px
+	background-color: #ffffff
+
+.time-work
+	color: $greyColor
+	position: relative
+	padding-left: 26px
+	white-space: nowrap
+	&::before
+		content: ''
+		width: 16px
+		height: 16px
+		display: inline-block
+		position: absolute
+		top: 50%
+		left: 0
+		transform: translateY(-50%)
+		background: url('../img/icons/clock.svg') center/cover no-repeat
+
+@include adaptive-min-max($mobileMin, $mobileMax)
+	.section-title
+		font-size: calc(18px + (30 - 18) * ((100vw - 480px) / (767 - 480)))
+		&_h3
+			font-size: calc(14px + (20 - 14) * ((100vw - 480px) / (767 - 480)))
+
+@include adaptive-max-mobile
+	.section-descr
+		font-size: 14px
+
+@include adaptive-max-mobile-sm
+	.section-title
+		font-size: 18px
+		&_h3
+			font-size: 14px

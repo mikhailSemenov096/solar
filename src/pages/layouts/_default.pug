@@ -1,0 +1,57 @@
+include /../node_modules/bemto.pug/bemto
+include /modules/sections/header/header.pug
+include /modules/sections/footer/footer.pug
+include /modules/blocks/modal/modal.pug
+include /modules/blocks/mobile-menu/mobile-menu.pug
+
+block globalVars
+
+doctype html
+
+html(lang='ru')
+	head
+		meta(charset='utf-8')
+		meta(name='viewport' content="width=320, initial-scale=1, shrink-to-fit=no")
+		meta(http-equiv='X-UA-Compatible' content='IE=edge')
+
+		title= pageTitle || ''
+		meta(name='description' content=pageDescription || '')
+		meta(name='keywords' content=pageKeywords || '')
+
+		link(href='css/main.css' type="text/css" rel='stylesheet')
+
+	block body
+		-
+			var gClasses = {
+				sectionTitle: 'section-title',
+				sectionDescr: 'section-description',
+				sectionRow: 'section-row',
+				sectionCol: 'section-col',
+				shadowBlock: 'shadow-block'
+			}
+		+b('body')
+			// +e.main-content-wrap
+			+header()
+
+			block content
+
+			+footer()
+			+modal()
+			+mobile-menu()
+			+preloader()
+
+			script(src="https://api-maps.yandex.ru/2.1/?lang=ru_RU")
+			//- script(src="https://unpkg.com/swiper/js/swiper.min.js")
+			script(src="js/main.js")
+
+
+
+
+
+
+
+
+
+
+
+

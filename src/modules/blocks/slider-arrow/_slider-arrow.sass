@@ -1,0 +1,47 @@
+.slider-btn
+	display: inline-block
+	width: 40px
+	height: 40px
+	box-shadow: 0 0 27px rgba(0, 0, 0, 0.06)
+	background-color: $whiteColor
+	border-radius: 50%
+	position: absolute
+	top: 50%
+	transform: translateY(-50%)
+	&::before
+		content: ''
+		display: inline-block
+		width: 7px
+		height: 12px
+		background: url('../img/icons/icon_arrow.svg')
+		position: absolute
+		top: 50%
+		left: 50%
+		transform: translate(-50%, -50%)
+		transition: transform .2s linear
+	&_prev
+		transform: translate(-100%, -50%)
+		left: -45px
+	&_next
+		transform: translate(100%, -50%)
+		right: -45px
+		&::before
+			transform: translate(-50%, -50%) rotate(180deg)
+	&.swiper-button-disabled
+		box-shadow: none
+		cursor: auto
+		&::before
+			opacity: 0.5
+	&:active:not(.swiper-button-disabled)
+		box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1)
+
+@include adaptive-max-desktop-sm
+	.slider-btn
+		&_prev
+			left: -15px
+		&_next
+			right: -15px
+
+@include adaptive-max-tablet
+	.slider-btn
+		display: none

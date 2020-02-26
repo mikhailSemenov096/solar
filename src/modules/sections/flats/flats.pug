@@ -1,0 +1,30 @@
+include /modules/blocks/drop-block/drop-block.pug
+
+block globalVars
+	-
+		var flatsList = [
+			{src: 'img/flats/flats_1.jpg', descr: '2-х комнатная квартира, 90 м, <br> Советский район', cost: '2 000 000'},
+			{src: 'img/flats/flats_2.jpg', descr: '2-х комнатная квартира, 90 м, <br> Советский район', cost: '2 000 000'},
+			{src: 'img/flats/flats_3.jpg', descr: '2-х комнатная квартира, 90 м, <br> Советский район', cost: '2 000 000'},
+			{src: 'img/flats/flats_4.jpg', descr: '2-х комнатная квартира, 90 м, <br> Советский район', cost: '2 000 000'},
+			{src: 'img/flats/flats_5.jpg', descr: '2-х комнатная квартира, 90 м, <br> Советский район', cost: '2 000 000'},
+			{src: 'img/flats/flats_6.jpg', descr: '2-х комнатная квартира, 90 м, <br> Советский район', cost: '2 000 000'},
+		]
+
+section.flats(id="flats")
+	.container
+		.flats__title-wrap.section-title-wrap
+			h2.section-title Предлагаем более 1000 вариантов недвижимости
+			p.section-descr.
+				У нас  большая, регулярно обновляемая база объектов
+		.flats__list.section-row
+			each flatsItem, i in flatsList
+				.flats__item.section-col
+					a.flats__link.shadow-block.wow.fadeInUp(href="#" data-wow-delay=`${0.1 * i}s`)
+						span.flats__img-wrap
+							img.flats__img(src=flatsItem.src)
+						span.flats__info-flat
+							span.flats__descr-flat!= flatsItem.descr
+							span.flats__cost-flat= flatsItem.cost
+		.section-btn-wrap
+			a.btn(href='https://www.avito.ru/user/506a2349562f0a31801512c450644ad6/profile') Показать всё

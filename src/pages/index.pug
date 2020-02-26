@@ -1,0 +1,20 @@
+extends layouts/_default
+
+include /modules/blocks/preloader/preloader.pug
+include /modules/sections/statistic/statistic.pug
+include /modules/sections/main-screen/main-screen.pug
+include /modules/sections/workers/workers.pug
+
+block globalVars
+	- var pageTitle = "Главная страница"
+
+block content
+	+main-screen()
+	include /modules/sections/advantages/advantages.pug
+	include /modules/sections/flats/flats.pug
+	include /modules/sections/stock/stock.pug
+	+statistic()
+	include /modules/sections/comments/comments.pug
+
+	+workers()
+	include /modules/sections/contacts/contacts.pug

@@ -1,0 +1,28 @@
+mixin workers()
+	-
+		const workersList = [
+			{src: 'img/workers/emp1.jpg', name: 'Вениаминов И.И.'},
+			{src: 'img/workers/emp2.jpg', name: 'Вениаминов И.И.'},
+			{src: 'img/workers/emp3.jpg', name: 'Вениаминов И.И.'},
+			{src: 'img/workers/emp4.jpg', name: 'Вениаминов И.И.'},
+			{src: 'img/workers/emp1.jpg', name: 'Вениаминов И.И.'},
+			{src: 'img/workers/emp2.jpg', name: 'Вениаминов И.И.'},
+		]
+
+	section.workers(id='workers')
+		.container
+			.workers__title-wrap.section-title-wrap
+				h2.section-title.
+					Специалисты с более чем 10-летним стажем работы  помогут быстро решить все вопросы, связанные с покупкой и продажей квартир
+				p.section-descr.
+					Мы сами ведем все переговоры с покупателями, чтобы сэкономить ваше время
+			.workers__slider-wrap
+				.workers__slider.swiper-container
+					.swiper-wrapper
+						each workersItem, i in workersList
+							.workers__item.swiper-slide
+								.workers__item-img-wrap
+									img.workers__item-img(src= workersItem.src)
+								.workers__item-name= workersItem.name
+				+slider-arrow('workers__btn')
+				+slider-dots('workers__dots')

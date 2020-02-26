@@ -1,0 +1,17 @@
+mixin navbar(className)
+	-
+		var navList = [
+			{value: "Преимущества", link: "#advantages"},
+			{value: "Квартиры", link: "#flats"},
+			{value: "Акции", link: "#stock"},
+			{value: "Отзывы", link: "#comments"},
+			{value: "Команда", link: "#workers"},
+			{value: "Контакты", link: "#contacts"},
+		]
+
+	div(class=className + " navbar")
+		ul(class="navbar__list")
+			each navItem, i in navList
+				li(class="navbar__item")
+					a(href= navItem.link class="navbar__link")= navItem.value
+		span(class="navbar__border")

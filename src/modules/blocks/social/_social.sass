@@ -1,0 +1,17 @@
+.social
+	display: flex
+	&__link
+		display: inline-block
+		@include mr(13px)
+		svg
+			width: 30px
+			height: 30px
+			display: inline-block
+			vertical-align: bottom
+			path
+				fill: #4a76a8
+				transition: all .2s linear
+			@include adaptive-hover
+				path
+					fill: #4958a5
+

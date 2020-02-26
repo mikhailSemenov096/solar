@@ -1,0 +1,24 @@
+.phones
+	&__link
+		font-size: 18px
+		font-weight: 700
+		color: $blackColor
+		transition: color .3s linear
+		@include adaptive-hover
+			color: $blueColor
+	&__item
+		padding-left: 24px
+		position: relative
+		white-space: nowrap
+		&:first-child
+			&::before
+				content: ''
+				width: 14px
+				height: 14px
+				background: url('../img/icons/call.svg') center no-repeat
+				display: inline-block
+				position: absolute
+				left: 0
+				top: 50%
+				margin-top: -7px
+

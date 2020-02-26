@@ -1,0 +1,86 @@
+.statistic
+	background: url('../img/main/bg3.png') center/cover no-repeat
+	padding: 100px 0
+	&__col
+		max-width: 25%
+		flex: 0 0 25%
+		text-align: center
+
+	&__item
+		// width: 70%
+		// margin-left: auto
+		// margin-right: auto
+
+	&__count-wrap
+		position: relative
+		width: 70%
+		margin-left: auto
+		margin-right: auto
+		max-height: 100%
+		margin-bottom: 25px
+
+	&__count
+		position: relative
+		width: 100%
+		height: 0
+		margin: 0
+		padding: 50% 0
+
+	&__circle-svg
+		transform: translateY(-50%)
+		fill: transparent
+
+	&__circle-prgs
+		stroke: #ffc501
+
+	&__count-num
+		position: absolute
+		top: 50%
+		left: 50%
+		transform: translate(-50%, -50%)
+		// color: #939393
+		// display: none
+		color: rgba($blackColor, .8)
+		font-weight: 700
+		font-size: 40px
+		white-space: nowrap
+		&_show
+			display: block
+
+	&__descr
+		font-size: 20px
+		color: rgba($blackColor, .8)
+		font-weight: 700
+
+
+@include adaptive-max-tablet
+	.statistic
+		&__row
+			flex-wrap: wrap
+			margin-bottom: -45px
+		&__col
+			max-width: 50%
+			flex: 0 0 50%
+			margin-bottom: 45px
+		&__count-wrap
+			width: 50%
+
+		&__descr
+			font-size: 16px
+
+@include adaptive-max-mobile
+	.statistic
+		padding: 60px 0
+		&__count-num
+			font-size: 30px
+		&__count-wrap
+			width: 70%
+
+@include adaptive-max-mobile-sm
+	.statistic
+		&__col
+			flex: 0 0 100%
+			max-width: 100%
+		&__count-wrap
+			width: 150px
+

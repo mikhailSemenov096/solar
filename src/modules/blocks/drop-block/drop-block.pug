@@ -1,0 +1,20 @@
+mixin drop-block(data)
+	.drop-block(class=`drop-block_${data.mod}`)
+			input.drop-block__input(type='file' id= data.id accept= data.accept)
+			label.drop-block__label(for= data.id)
+				.drop-block__default
+					.drop-block__default-icon-wrap
+						img.drop-block__default-icon(src='')
+					.drop-block__default-descr
+						span= data.descr
+				.drop-block__content
+					img.drop-block__content-img(src='' alt='')
+					.drop-block__content-file
+						.drop-block__content-icon-wrap
+							img.drop-block__content-icon(src='' alt='Иконка файла')
+						.drop-block__content-name-file
+
+	.drop-block-id(style='width: 200px; height: 200px; border: 2px solid black;' )
+
+
+

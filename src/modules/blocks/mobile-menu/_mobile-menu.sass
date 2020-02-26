@@ -1,0 +1,47 @@
+.mobile-menu
+	position: fixed
+	top: 0
+	left: 0
+	bottom: 0
+	right: auto
+	background-color: $whiteColor
+	padding: 45px 95px 45px 15px
+	overflow-y: auto
+	transform: translate3d(-100%, 0, 0)
+	z-index: 99
+	will-change: transform
+	transition: all .5s ease
+	&_active
+		transform: translateX(0%)
+	&_transition
+		// transition: all .3s linear
+
+	&__navbar
+		margin-bottom: 55px
+	&__phones
+		margin-bottom: 35px
+	&__time-work
+		margin-bottom: 37px
+	&__btn-wrap
+		margin-bottom: 20px
+
+.overlay-mobile
+	position: fixed
+	top: 0
+	left: 0
+	bottom: 0
+	opacity: 1
+	text-align: left
+	&.smoothly-show
+		transition-duration: .5s
+		transition-timing-function: ease
+
+
+
+@include adaptive-max-tablet
+	.mobile-menu
+		// display: none
+
+@include adaptive-max-mobile-sm
+	.mobile-menu
+		padding: 45px 15px

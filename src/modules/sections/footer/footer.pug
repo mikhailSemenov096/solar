@@ -1,0 +1,20 @@
+include /modules/blocks/social/social.pug
+include /modules/blocks/phones/phones.pug
+
+mixin footer()
+	+b('footer').footer
+		.container
+			div(class="footer__row section-row")
+				div(class="footer__view")
+					div(class="footer__logo-wrap")
+						img(class="footer__logo logo" src="img/logo_white.svg" alt="Логотип")
+					small(class="footer__rights-reserved") Copyright © 2018, Solar, #[br] All Rights Reserved.
+				div(class="footer__main-wrap")
+					div(class="footer__main")
+						div(class="footer__adress") Уфа, Проспект октября 1/2, #[br] 4 этаж, 407 офис
+						+social('footer__social')
+						+phones('footer__phones')
+						div(class="footer__btn-wrap")
+							button(class="footer__btn-call btn" data-modal='popup-call') заказать звонок
+
+

@@ -1,0 +1,17 @@
+.slider-dots
+	display: none
+	.swiper-pagination-bullet
+		width: 8px
+		height: 8px
+		display: inline-block
+		background-color: #bdc3ca
+		border-radius: 50%
+		@include mr(15px)
+		cursor: pointer
+		&-active
+		 background-color: #516961
+
+@include adaptive-max-tablet
+	.slider-dots
+		display: flex
+		justify-content: center

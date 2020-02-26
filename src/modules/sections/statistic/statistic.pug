@@ -1,0 +1,40 @@
+mixin statistic()
+	-
+		const statisticList = [
+			{
+				count: '2000',
+				text: 'Счастливых клиентов'
+			},
+
+			{
+				count: '23',
+				text: 'Завершенных сделок'
+			},
+
+			{
+				count: '10',
+				text: 'Лет успешной работы'
+			},
+
+			{
+				count: '100',
+				text: 'Предложений'
+			}
+		]
+
+	section.statistic(id='statistic')
+		.container
+			.statistic__row.section-row
+				each statisticItem, i in statisticList
+					.statistic__col.section-col
+						.statistic__item
+							.statistic__count-wrap
+								.statistic__count.wow
+									svg(viewBox='0 0 184 184' class='statistic__circle-svg')
+										//- circle(class='progress__circle-bg' r='40' cx='50%' cy='50%' stroke-width='10' stroke-linecap='round')
+										circle(class='statistic__circle-prgs' r='89.5' cx='50%' cy='50%' stroke-width='5' stroke-linecap='round')
+									span.statistic__count-num= statisticItem.count
+							.statistic__descr= statisticItem.text
+
+
+

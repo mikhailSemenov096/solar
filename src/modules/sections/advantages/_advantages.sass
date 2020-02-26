@@ -1,0 +1,82 @@
+$marginItem: 58px
+
+.advantages
+	padding: 100px 0
+	background: $greyBgColor url('../img/advantages/advantages_bg.png') center/cover no-repeat
+	text-align: center
+	&__title-wrap
+		margin-bottom: 78px
+	&__list
+		flex-wrap: wrap
+		margin-bottom: -8px
+		text-align: center
+	&__item
+		max-width: 33.33333%
+		flex: 0 0 33.33333%
+		padding: 0 ($gridIndent * 1.5)
+		margin-bottom: $marginItem
+	&__item_center
+		padding: 0 $gridIndent / 2
+		align-self: center
+	&__img-wrap
+		margin-bottom: 30px
+	&__img
+		display: inline-block
+		vertical-align: bottom
+	&__item-descr
+		font-size: 16px
+		font-weight: 700
+	&__center-block
+		background: url('../img/advantages/adv_center_bg1.jpg') center/cover no-repeat
+		padding-bottom: 90%
+		position: relative
+	&__center-content
+		position: absolute
+		top: -18px
+		left: 0
+		right: 0
+
+@include adaptive-max-desktop-sm
+	.advantages
+		&__item
+			padding: 0 $gridIndent
+		&__item_center
+			align-self: flex-start
+			.advantages__img
+				max-width: calc(100% - 100px)
+		&__center-block
+			padding-bottom: 100%
+
+@include adaptive-max-tablet
+	.advantages
+		&__list
+			justify-content: center
+		&__item_center
+			display: none
+
+@include adaptive-max-mobile
+	$marginItem: 38px
+
+	.advantages
+		padding: 60px 0
+		&__title-wrap
+			margin-bottom: 35px
+		&__item
+			padding: 0 $gridIndent / 2
+			margin-bottom: $marginItem
+
+@include adaptive-min-max($mobileMin, $mobileMax)
+	.advantages
+		&__item-descr
+			font-size: calc(11px + (16 - 11) * ((100vw - 480px) / (767 - 480)))
+
+@include adaptive-max-mobile-sm
+	.advantages
+		background-image: none
+		&__img-wrap
+			margin-bottom: 13px
+		&__item
+			max-width: 50%
+			flex: 0 0 50%
+		&__item-descr
+			font-size: 11px

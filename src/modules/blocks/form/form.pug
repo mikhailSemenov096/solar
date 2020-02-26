@@ -1,0 +1,25 @@
+include /modules/blocks/inputs-group/inputs-group.pug
+include /modules/blocks/input-checkbox/input-checkbox.pug
+
+block globalVars
+	-
+		var fieldList = [
+			{name: 'name', label: 'Имя', required: true},
+			{name: 'phone', label: 'Телефон', required: true}
+		]
+
+
+mixin form(data)
+	form(class= `${data}__form form`)
+		div(class='form__inputs-block')
+			each fieldItem, i in fieldList
+				+inputs-group(fieldItem)
+		div(class='form__agree')
+			+input-checkbox(data, true)
+			div(class='form__agree-text') Согласен с #[a(href='#' class='link-blue' data-modal='popup-agree') обработкой персональных данных]
+		div(class=`${data}__btn-wrap`)
+				button(class=`${data}__btn form__btn btn`) отправить
+
+
+
+

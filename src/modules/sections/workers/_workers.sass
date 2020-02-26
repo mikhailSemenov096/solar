@@ -1,0 +1,38 @@
+.workers
+	padding: 100px 85px
+	background: url('../img/workers/emp_bg.png') center/cover no-repeat
+	&__title-wrap
+		margin-bottom: 45px
+	&__slider-wrap
+		position: relative
+	&__slider
+		margin: 0 (-$gridIndent / 2) 40px
+		padding: 0 ($gridIndent / 2)
+	&__item-img-wrap
+		margin-bottom: 20px
+	&__item-img
+		display: inline-block
+		vertical-align: bottom
+		width: 100%
+	&__item-name
+		font-size: 16px
+		font-weight: 700
+
+@include adaptive-max-desktop-sm
+	.workers
+		padding-left: 55px
+		padding-right: 55px
+
+@include adaptive-max-tablet
+	.workers
+		padding-left: 0
+		padding-right: 0
+
+@include adaptive-max-mobile
+	.workers
+		padding: 60px 0
+		&__title-wrap
+			margin-bottom: 30px
+
+.jj
+	display: none

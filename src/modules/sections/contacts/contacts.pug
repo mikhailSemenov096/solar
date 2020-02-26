@@ -1,0 +1,15 @@
+include /modules/blocks/form/form.pug
+
+section(class='contacts' id='contacts')
+	div(class='container')
+		div(class='contacts__content shadow-block')
+			div(class='contacts__title-wrap section-title-wrap')
+				h2.section-title Контакты
+				p.section-descr Уфа, Проспект октября 1/2, 4 этаж, 407 #[br] 89196009424, 89177424444
+			div(class='contacts__quest')
+				h3(class='section-title section-title_h3') Остались вопросы?
+				p(class='section-descr') Заполните форму, задайте вопрос, и мы перезвоним вам в течение 15 мин.
+			+form('contacts')
+	div(class='contacts__map map' id='map')
+
+

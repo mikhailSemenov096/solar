@@ -1,0 +1,58 @@
+$paddingInput: 17px
+
+.field-wrap
+	position: relative
+	border-bottom: 2px solid #e5e5e5
+	&::after 
+		content: ''
+		position: absolute
+		bottom: -2px
+		left: 0
+		width: 0%
+		height: 2px
+		background-color: red
+		transition: width .2s ease-in
+		border-radius: 4px
+	&_active
+		.field-wrap__label
+			transform: translateY(-50%) translateY(-15px) scale(0.8)
+
+	&__input
+		width: 100%
+		height: 100%
+		height: 50px
+		line-height: 50px
+		padding: 15px 0 0
+		text-overflow: ellipsis
+
+	&__label
+		position: absolute
+		top: 50%
+		transform: translateY(-50%)
+		z-index: 1
+		left: 0
+		font-size: 12px
+		text-transform: uppercase
+		letter-spacing: 1.2px
+		color: #939393
+		font-weight: 700
+		pointer-events: none
+		transition: all .2s ease-out
+		transform-origin: 0 0
+
+	&__text-error
+		position: absolute
+		bottom: -5px
+		transform: translateY(100%)
+		left: 0
+		display: block
+		font-size: 10px
+		display: none
+		color: red
+
+.field-wrap_error
+	.field-wrap__text-error
+		display: block 
+
+	&::after
+		width: 100%

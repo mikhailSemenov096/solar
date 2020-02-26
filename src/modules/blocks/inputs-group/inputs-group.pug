@@ -1,0 +1,6 @@
+mixin inputs-group(data)
+	div(class=`field-wrap ${data.class || ''}`)
+		- var requiredInput = (data.required) ? 'field-wrap__input_req' : ''
+		input(type='text' name=data.name class=`field-wrap__input ${requiredInput}` autocomplete='off')
+		label(class=`field-wrap__label`)= data.label
+		span.field-wrap__text-error

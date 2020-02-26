@@ -1,0 +1,55 @@
+//Медиа запросы для адаптивной вёрстки
+@mixin adaptive-max-desktop-sm
+	@media (max-width: $desktopSmMax)
+		@content
+
+@mixin adaptive-max-tablet
+	@media (max-width: $tabletMax)
+		@content
+
+@mixin adaptive-max-mobile
+	@media (max-width: $mobileMax)
+		@content
+
+@mixin adaptive-max-mobile-sm
+	@media (max-width: $mobileSmMax)
+		@content
+
+@mixin adaptive-min-max($min, $max)
+	@media (min-width: $min) and (max-width: $max)
+		@content
+
+//Медиа запрос для использования hover только не на touch-устройствах
+@mixin adaptive-hover
+	@media (hover: hover) and (pointer: fine), (min-width:0\0)
+		&:hover
+			@content
+
+//Миксины для обнуления margin у последнего или первого элемента
+@mixin mb($size)
+	margin-bottom: $size
+	&:last-child
+		margin-bottom: 0
+@mixin mt($size)
+	margin-top: $size
+	&:first-child
+		margin-top: 0
+@mixin mr($size)
+	margin-right: $size
+	&:last-child
+		margin-right: 0
+@mixin ml($size)
+	margin-left: $size
+	&:first-child
+		margin-left: 0
+
+//Миксин анимации keyframes
+=keyframes($name)
+  @-webkit-keyframes #{$name}
+    @content
+  @-moz-keyframes #{$name}
+    @content
+  @-ms-keyframes #{$name}
+    @content
+  @keyframes #{$name}
+    @content
